@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "eslint": "eslint ."
+    "eslint": "eslint .",
+    "build": "webpack"
   },
   "author": "Gopikrishna Sathyamurthy",
   "license": "ISC",
