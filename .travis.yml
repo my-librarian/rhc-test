@@ -13,4 +13,4 @@ deploy:
   app: librarian
   domain: rkmvc
   on:
-    repo: my-librarian/rhc-test
+    tags: true
