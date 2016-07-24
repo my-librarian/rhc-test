@@ -3,15 +3,15 @@ node_js:
   - stable
 script: npm run build
 before_deploy:
-  - ls -a | grep -v -E '.git|dist|\.\.?\/|.travis.yml'
+  - sh -c "ls -a | grep -v -E '.git|dist|\.\.?\/|.travis.yml' || true"
   # - mv dist/* ./
   # - rm -rf dist
-deploy:
-  provider: openshift
-  user: sandalblack19@gmail.com
-  password:
-    secure: Lqb5dHOXsQBPTN3t3j0czaHVnyvCzqIeymfUrOVMUV0PvP/IcRXL1PDEbMqoeKo7UCNk9hNJLyrRgOYFrbMsT6R1n6jcZGVyrCiHULSBZnA67KkOknoFLoD92DvqnbKF8PyU1QEBvTlZsb1P8CcSEs93KG6OMB4sTTKDCzjTghbf2sgP3H1SzlotMgfjCXw+YwIzeN1jLEsD3PEdJ6Eku8Y8UM20KQ/KFdCiabCawCRbmz09rKNGziR0QvW4sFlYBMixBXkdoEf1Y7gMoTbzHqNq5TYix9X8cBM44p442ZIMLnOzg5v0lDLt/HHLV29HTPXgHpHw2OV7b98kx8PaP3Vo4/tF9iGZR9j/9pEuuweknInaNjPer0b/euTz7AOqH1+6ENCBsskR2YOJdqPKZSZ1WV/aAXd9F1Us0DSXbrqhO9mSneHeysRapCtX5+oqHEz+AikhsEPgE2Ui8mVyj9lkEQMItl9Ya06unodvLKPy6FgmpytGY42UpXkZIzCNtokwcojjk6cdzsdKZ2FS8Gd5rlTSWxhiZsOG2NyvXXFq7PJQHz+Eq1BIAi1on2MvPqpx7ddlPk8osuE0FlYrQhL/QbkhnEHwEa1LN/gUVH7i0xhpe3nPRY+fCbeTqyJdNmQpbY+lBTIuFm9qXH3YOfABtYz0Ih/UUZB71fcyqNs=
-  app: librarian
-  domain: rkmvc
-  on:
-    repo: my-librarian/rhc-test
+# deploy:
+#   provider: openshift
+#   user: sandalblack19@gmail.com
+#   password:
+#     secure: Lqb5dHOXsQBPTN3t3j0czaHVnyvCzqIeymfUrOVMUV0PvP/IcRXL1PDEbMqoeKo7UCNk9hNJLyrRgOYFrbMsT6R1n6jcZGVyrCiHULSBZnA67KkOknoFLoD92DvqnbKF8PyU1QEBvTlZsb1P8CcSEs93KG6OMB4sTTKDCzjTghbf2sgP3H1SzlotMgfjCXw+YwIzeN1jLEsD3PEdJ6Eku8Y8UM20KQ/KFdCiabCawCRbmz09rKNGziR0QvW4sFlYBMixBXkdoEf1Y7gMoTbzHqNq5TYix9X8cBM44p442ZIMLnOzg5v0lDLt/HHLV29HTPXgHpHw2OV7b98kx8PaP3Vo4/tF9iGZR9j/9pEuuweknInaNjPer0b/euTz7AOqH1+6ENCBsskR2YOJdqPKZSZ1WV/aAXd9F1Us0DSXbrqhO9mSneHeysRapCtX5+oqHEz+AikhsEPgE2Ui8mVyj9lkEQMItl9Ya06unodvLKPy6FgmpytGY42UpXkZIzCNtokwcojjk6cdzsdKZ2FS8Gd5rlTSWxhiZsOG2NyvXXFq7PJQHz+Eq1BIAi1on2MvPqpx7ddlPk8osuE0FlYrQhL/QbkhnEHwEa1LN/gUVH7i0xhpe3nPRY+fCbeTqyJdNmQpbY+lBTIuFm9qXH3YOfABtYz0Ih/UUZB71fcyqNs=
+#   app: librarian
+#   domain: rkmvc
+#   on:
+#     repo: my-librarian/rhc-test
