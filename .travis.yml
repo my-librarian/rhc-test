@@ -6,6 +6,8 @@ before_deploy:
   - sh -c "ls -a | grep -v -E '.git|dist|\.\.?\/|.travis.yml' | xargs rm -rf || true"
   - mv dist/* ./
   - rm -rf dist
+  - git config --global user.email "travis@localhost.localdomain"
+  - git config --global user.name "Travis CI"
   - git add -A
   - git commit -m "Deploy"
 deploy:
