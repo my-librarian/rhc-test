@@ -1,4 +1,11 @@
-script: echo "YAY!"
+language: node_js
+node_js:
+  - stable
+script: npm run build
+before_deploy:
+  - ls -a | grep -v -E '.git|dist|\.\.?\/|.travis.yml' | xargs rm -rf
+  - mv dist/* ./
+  - rm -rf dist
 deploy:
   provider: openshift
   user: sandalblack19@gmail.com
