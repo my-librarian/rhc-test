@@ -6,6 +6,8 @@ before_deploy:
   - sh -c "ls -a | grep -v -E '.git|dist|\.\.?\/|.travis.yml' | xargs rm -rf || true"
   - mv dist/* ./
   - rm -rf dist
+  - git add -A
+  - git commit -m "Deploy"
 deploy:
   provider: openshift
   user: sandalblack19@gmail.com
