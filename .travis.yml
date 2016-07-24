@@ -1,3 +1,4 @@
+script: echo "YAY!"
 deploy:
   provider: openshift
   user: sandalblack19@gmail.com
