@@ -1,4 +1,5 @@
 cd dist
+echo "$TRAVIS_TAG" >> version.txt
 git init
 git config --global user.email "travis@localhost.localdomain"
 git config --global user.name "Travis CI"
