@@ -3,9 +3,12 @@ node_js:
   - stable
 script: npm run build
 before_deploy:
-  - sh -c "ls -a | grep -v -E 'dist|\.\.?\/|.travis.yml' | xargs rm -rf || true"
-  - mv dist/* ./
-  - rm -rf dist
+  - cd dist
+  - git init
+  - git config --global user.email "travis@localhost.localdomain"
+  - git config --global user.name "Travis CI"
+  - git add --all
+  - git commit -am "Travis change"
 deploy:
   provider: openshift
   skip_cleanup: true
